@@ -39,6 +39,23 @@ namespace sistemaRepuestos.Models
         }
 
 
+        public static String eliminarProductos(Producto p) {
+
+            try
+            {
+
+                tablaProductos.Remove(p);
+
+                return "registro eliminado"; 
+            }
+            catch (Exception e)
+            {
+                return e.Message; 
+            }
+
+        }
+
+
         //public static String nuevoProducto() { }
 
 
