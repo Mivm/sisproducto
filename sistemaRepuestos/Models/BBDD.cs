@@ -5,23 +5,41 @@ using System.Web;
 
 namespace sistemaRepuestos.Models
 {
-    public class BBDD{
+    public class BBDD
+    {
         private static List<Producto> tablaProductos = new List<Producto> {
-            new Producto{Id = 1, Descripcion = "Descripcion1", Stock = 12 },
-            new Producto{Id = 2, Descripcion = "Descripcion2", Stock = 10 },
-            new Producto{Id = 3, Descripcion = "Descripcion3", Stock = 2 },
-            new Producto{Id = 4, Descripcion = "Descripcion4", Stock = 3 }
+            new Producto("descripcion", 2),
+            new Producto("otra descripcion",14)
         };
 
 
-        public static List<Producto> ListarProductos() {
+        public static List<Producto> ListarProductos()
+        {
             var listado = from p in tablaProductos
-                          orderby p.Descripcion, p.Stock
+                          orderby p.descripcion, p.stock
                           select p;
 
             return listado.ToList();
 
         }
+
+        public static String ingresarProducto(Producto p)
+        {
+
+            try
+            {
+                tablaProductos.Add(p); 
+                return "Producto insertado";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+
+        }
+
+
+        //public static String nuevoProducto() { }
 
 
     }
