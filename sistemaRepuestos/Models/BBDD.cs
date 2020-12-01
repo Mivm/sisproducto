@@ -9,7 +9,8 @@ namespace sistemaRepuestos.Models
     {
         private static List<Producto> tablaProductos = new List<Producto> {
             new Producto("descripcion", 2),
-            new Producto("otra descripcion",14)
+            new Producto("otra descripcion",14),
+            new Producto("siguiente",25)
         };
 
 
