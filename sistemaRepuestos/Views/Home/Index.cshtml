@@ -16,7 +16,16 @@
     <title>@ViewBag.Titulo</title>
 </head>
 <body>
-    <h2>LISTADO MAESTRO DE PRODUCTOS</h2>
+
+    <header>
+        <h2>LISTADO MAESTRO DE PRODUCTOS</h2>
+    </header>
+    
+    <div>
+        <button type="button" class="btn btn-primary btn-sm green">Crear Nuevo Repuesto</button>
+    </div>
+    
+
     <div>
         <table class="table table-dark">
             <thead>
@@ -34,8 +43,7 @@
                         <th scope="row">@producto.id</th>
                         <td>@producto.descripcion</td>
                         <td>@producto.stock</td>
-                        <td><a class="btn btn-primary" href="#" role="button">Ver</a></td>
-                        <td><a class="btn btn-primary" href="#" role="button">Modificar</a></td>
+                        <td><a class="btn btn-primary" href="#" role="button">Ver</a></td>                   
                         <td><a class="btn btn-primary" href="#" role="button">Eliminar</a></td>
                     </tr>
                 }
