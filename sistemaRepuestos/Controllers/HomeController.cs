@@ -11,10 +11,15 @@ namespace sistemaRepuestos.Controllers
     {
         // GET: Home
         public ActionResult Index(){
-            ViewBag.Titulo = "SISTEMA DE REPUESTOS";
-
-            return View();
-           //return Content(BBDD.ListarProductos()[0].Descripcion);
+           ViewBag.Titulo = "SISTEMA DE REPUESTOS";
+           ViewBag.productos = BBDD.ListarProductos(); 
+           
+           return View();
         }
+
+        public ActionResult Nuevo() {
+            return View(); 
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+    //var personas = ViewData.Model;
 }
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
-    
+
 
 
     <title>@ViewBag.Titulo</title>
@@ -27,30 +28,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><a class="btn btn-primary" href="#" role="button">Ver</a></td>
-                    <td><a class="btn btn-primary" href="#" role="button">Modificar</a></td>
-                    <td><a class="btn btn-primary" href="#" role="button">Eliminar</a></td>
-
-                    @* <td>Eliminar</td>
-        <td>Modificar</td>*@
-
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-
-                </tr>
+                @foreach (var producto in ViewBag.productos)
+                {
+                    <tr>
+                        <th scope="row">@producto.id</th>
+                        <td>@producto.descripcion</td>
+                        <td>@producto.stock</td>
+                        <td><a class="btn btn-primary" href="#" role="button">Ver</a></td>
+                        <td><a class="btn btn-primary" href="#" role="button">Modificar</a></td>
+                        <td><a class="btn btn-primary" href="#" role="button">Eliminar</a></td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
