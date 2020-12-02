@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificar</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body>
+    <div>
+        <h1>Aqui se modificara</h1>
+        <div>
+            <form action="/Home/Modificar" method="post">
+                 <input type="hidden" id="id" name="id"  value="@ViewBag.producto.id" />
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" value=" @ViewBag.producto.descripcion ">
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="text" class="form-control" id="stock" name="stock" value="@ViewBag.producto.stock">
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+
+            
+
+        </div>
+
+
+    </div>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

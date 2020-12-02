@@ -35,16 +35,16 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form>
+                <form action="/Home/Index" method="post">
                     <div class="modal-body">
                         <div class="form-group" >
-                            <label for="des">Descripción del Repuesto</label>
-                            <input type="text" class="form-control" id="des" placeholder="Ingresar Descripcion">
+                            <label for="descripcion">Descripción del Repuesto</label>
+                            <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresar Descripcion">
 
                         </div>
                         <div class="form-group">
                             <label for="stock">Cantidad</label>
-                            <input type="number" class="form-control" id="stock" placeholder="Ingresar Stock de Repuestos">
+                            <input type="number" class="form-control" id="stock" name="stock" placeholder="Ingresar Stock de Repuestos">
                         </div>
 
                     </div>
@@ -79,43 +79,11 @@
 
                     <!-- MODAL BUTTON VER -->
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ver</button>
-
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header border-bottom-0">
-                                        <h5 class="modal-title" id="exampleModalLabel">Vista de Repuestos</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                   
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label for="des">Descripción del Repuesto</label>
-                                                    <input type="text" class="form-control" id="des" placeholder="Ingresar Descripcion">
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="stock">Cantidad</label>
-                                                    <input type="number" class="form-control" id="stock" placeholder="Ingresar Stock de Repuestos">
-                                                </div>
-
-                                            </div>
-                                       
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary">Modificar</button>
-                                        </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+                        @Html.ActionLink("Ver", "Ver", new { id = producto.id })
                     </td>
                     <!-- BUTTON ELIMINAR-->
                     <td>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        @Html.ActionLink("Eliminar", "Eliminar", new { id = producto.id })    
                     </td>
 
 
@@ -123,6 +91,22 @@
                 }
             </tbody>
         </table>
+
+        <div>
+            
+            @if( ViewBag.mensaje != null) { 
+            
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <strong>@ViewBag.mensaje</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                
+            }
+
+        </div>
+
     </div>
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
